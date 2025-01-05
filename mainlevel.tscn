@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnuqjl1b6ifxe"]
+
+[ext_resource type="PackedScene" uid="uid://b2e4no7unskig" path="res://assets/textures/table/black_jack_table.glb" id="1_7bysx"]
+
+[sub_resource type="Sky" id="Sky_ugvcw"]
+
+[sub_resource type="Environment" id="Environment_rj533"]
+background_mode = 1
+background_color = Color(0, 0.345098, 0, 1)
+background_energy_multiplier = 0.75
+sky = SubResource("Sky_ugvcw")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rj533")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, -0.768183, 0.64023, 0, -0.64023, -0.768183, 0, 21.1201, 0)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_7bysx")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.222103, 0, 0.769059)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.928512, -0.238844, 0.284287, 0.0122892, 0.74546, 0.666438, -0.371099, 0.622289, -0.689233, 4.17507, 16.0303, -11.9254)
